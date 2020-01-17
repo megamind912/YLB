@@ -22,8 +22,10 @@ pygame.mouse.set_visible(False)
 f = True
 gamerunning = True
 
+
 def plat(platx):
     pygame.draw.rect(screen, grey, (platx, 975, 200, 30))
+
 
 def load_sprite(name):
     fullname = 'Sprites' + '/' + str(name)
@@ -33,6 +35,7 @@ def load_sprite(name):
     except:
         print('Error', name)
         raise SystemExit()
+
 
 stage = 1
 ball_image = load_sprite('ss.png')
@@ -54,6 +57,7 @@ rb_list = []
 yb_list = []
 gb_list = []
 bb_list = []
+
 
 def GameOver():
     gameover_image = load_sprite('GameOver.png')
@@ -89,6 +93,7 @@ def StartScreen():
                     f = False
         pygame.display.flip()
 
+
 def start_block():
     for j in range(4):
         for i in range(8):
@@ -106,6 +111,7 @@ def start_block():
                 gb_list.append(brick)
             if j == 3:
                 bb_list.append(brick)
+
 
 def pyramidka():
     for i in range(8):
@@ -277,7 +283,6 @@ while running:
                     elif stage == 3:
                         dy = -1
                         random_lvl()
-
 
     y = ball.rect.y
     x = ball.rect.x
